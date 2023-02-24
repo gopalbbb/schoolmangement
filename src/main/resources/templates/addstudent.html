@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	
+<head> 
+    <title>Add user</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style>
+		*{
+			box-sizing: border-box;
+			margin:0;
+			padding: 0;
+		}
+		
+	.form-box{
+		border:none;
+		width: 350px;
+		height: 400px;
+		margin: 20px auto;
+		display: flex;
+		flex-direction: column;
+	}
+	.input{
+		width: 280px;
+		height: 35px;
+		margin:auto;
+		border-radius: 5px;
+	}
+	.submit{
+		width: 220px;
+		height: 35px;
+        margin:auto;
+        border-radius: 5px;
+        background-color: blue;
+        color: white;
+    }
+	
+	.title{
+		width: fit-content;
+		margin:auto;
+		padding-top: 100px;
+	}
+	
+	</style>
+</head>
+<center>
+<body>
+    <h1 class="title"> Add user </h1>
+    <div>
+		<form th:action="@{/student/add}" method="post" th:object="${student}"> 
+		<div>	<input class="form-control" type="text" th:field="*{firstName}" placeholder=" Enter First Name"  required><br/>
+			</div> 
+			<div><input class="form-control" type="text" th:field="*{lastName}" placeholder=" Last Name "><br/>
+			</div>
+			<div><input class="form-control" type="number" th:field="*{rollNo}" placeholder=" RollNumber"  ><br/>
+			</div>
+			<div><input class="form-control" type="text" th:field="*{house}" placeholder=" house"  ><br/>
+</div>
+			<!-- <input class="input" type="number" id="movie_name" name="generated_otp_code" placeholder=" otp number"  value=""><br/>
+			<input class="input" type="number" id="movie_name" name="validated_otp" placeholder=" otp number"  value=""><br/>  -->
+			
+			
+			
+			<input class="submit" type="submit" value="Add User">
+		
+		</form>
+	</div>
+	
+</body>
+	
+</html>
